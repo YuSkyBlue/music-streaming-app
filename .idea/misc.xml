@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/android_kotlin_fast/musicstreamingapp/app/src/main/res/drawable/player_seek_background.xml" value="0.225" />
+        <entry key="..\:/android_kotlin_fast/musicstreamingapp/app/src/main/res/drawable/player_seek_thumb.xml" value="0.225" />
         <entry key="..\:/android_kotlin_fast/musicstreamingapp/app/src/main/res/layout/activity_main.xml" value="0.2046875" />
-        <entry key="..\:/android_kotlin_fast/musicstreamingapp/app/src/main/res/layout/fragment_player.xml" value="0.4" />
+        <entry key="..\:/android_kotlin_fast/musicstreamingapp/app/src/main/res/layout/fragment_player.xml" value="0.2" />
+        <entry key="..\:/android_kotlin_fast/musicstreamingapp/app/src/main/res/layout/item_music.xml" value="0.2046875" />
       </map>
     </option>
   </component>
@@ -13,5 +16,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.4" />
+      </ProjectState>
+    </option>
   </component>
 </project>
