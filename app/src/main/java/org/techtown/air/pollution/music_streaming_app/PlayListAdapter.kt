@@ -11,25 +11,29 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class PlayListAdapter(private val callback: (MusicModel) ->Unit): ListAdapter<MusicModel, PlayListAdapter.ViewHolder>(diffUtil) {
+class PlayListAdapter(private val callback: (MusicModel) -> Unit) : ListAdapter<MusicModel, PlayListAdapter.ViewHolder>(diffUtil) {
 
-    inner class ViewHolder(private val view: View): RecyclerView.ViewHolder(view){
-        fun bind(item: MusicModel){
+    inner class ViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+
+        fun bind(item: MusicModel) {
+
             val trackTextView = view.findViewById<TextView>(R.id.itemTrackTextView)
-            val artistTextView =view.findViewById<TextView>(R.id.itemArtistTextView)
-            val coverImageView =view.findViewById<ImageView>(R.id.itemCoverImageView)
+            val artistTextView = view.findViewById<TextView>(R.id.itemArtistTextView)
+            val coverImageView = view.findViewById<ImageView>(R.id.itemCoverImageView)
 
-            trackTextView .text = item.track
+            trackTextView.text = item.track
             artistTextView.text = item.artist
+
             Glide.with(coverImageView.context)
                 .load(item.coverUrl)
                 .into(coverImageView)
 
-            if(item.isPlaying){
+            if (item.isPlaying) {
                 itemView.setBackgroundColor(Color.GRAY)
-            }else{
+            } else {
                 itemView.setBackgroundColor(Color.TRANSPARENT)
             }
+
             itemView.setOnClickListener {
                 callback(item)
             }
@@ -37,7 +41,7 @@ class PlayListAdapter(private val callback: (MusicModel) ->Unit): ListAdapter<Mu
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return  ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_music,parent,false))
+        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_music, parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -45,14 +49,16 @@ class PlayListAdapter(private val callback: (MusicModel) ->Unit): ListAdapter<Mu
             holder.bind(musicModel)
         }
     }
-    companion object
-    val diffUtil = object : DiffUtil.ItemCallback<MusicModel>(){
-        override fun areItemsTheSame(oldItem: MusicModel, newItem: MusicModel): Boolean {
-            return oldItem.id == newItem.id
+
+    companion object {
+        val diffUtil = object : DiffUtil.ItemCallback<MusicModel>() {
+            override fun areItemsTheSame(oldItem: MusicModel, newItem: MusicModel): Boolean {
+                return oldItem.id == newItem.id
             }
 
-        override fun areContentsTheSame(oldItem: MusicModel, newItem: MusicModel): Boolean {
-            return  oldItem == newItem
+            override fun areContentsTheSame(oldItem: MusicModel, newItem: MusicModel): Boolean {
+                return oldItem == newItem
+            }
         }
     }
 }

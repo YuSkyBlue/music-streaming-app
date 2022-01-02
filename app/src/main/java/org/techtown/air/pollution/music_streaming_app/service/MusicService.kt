@@ -5,6 +5,6 @@ import retrofit2.http.GET
 
 interface MusicService {
 
-    @GET("v3/07e56c45-3994-440f-b28d-832d67bc9286")
+    @GET("/v3/07e56c45-3994-440f-b28d-832d67bc9286")
     fun listMusics() : Call<MusicDto>
 }
