@@ -17,7 +17,7 @@
         android:id="@+id/playerListViewGroup"
         android:layout_width="wrap_content"
         android:visibility="visible"
-        app:constraint_referenced_ids="titleTextView, playListRecyclerView, playListSeeBar"
+        app:constraint_referenced_ids="titleTextView, playListRecyclerView, playerListSeeBar"
         android:layout_height="wrap_content" />
 
     <View
@@ -164,7 +164,7 @@
         tools:text="0:00" />
 
     <SeekBar
-        android:id="@+id/playListSeeBar"
+        android:id="@+id/playerListSeeBar"
         android:layout_width="0dp"
         android:layout_height="2dp"
         android:clickable="false"
